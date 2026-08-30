@@ -27,6 +27,9 @@ jobs:
       - name: List files
         run: ls -la
 
+      - name: Rename sketch file to match folder
+        run: mv Tesla_BLE_TPMS_v03.ino Tesla_BLE_TPMS.ino
+
       - name: Compile Firmware
         run: |
           arduino-cli compile --fqbn esp32:esp32:esp32:PartitionScheme=huge_app . --output-dir ./build
@@ -36,6 +39,6 @@ jobs:
         with:
           name: tpms-firmware
           path: |
-            ./build/Tesla_BLE_TPMS_v03.ino.bin
+            ./build/Tesla_BLE_TPMS.ino.bin
             ./build/bootloader.bin
             ./build/partitions.bin
