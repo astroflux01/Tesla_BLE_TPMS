@@ -10,10 +10,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Arduino CLI
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
-          echo "$HOME/bin" >> $GITHUB_PATH
-          echo "PATH=$PATH:$HOME/bin" >> $GITHUB_ENV
+        uses: arduino/setup-arduino-cli@v1
+        with:
+          version: "0.x"
 
       - name: Verify Arduino CLI
         run: arduino-cli version
