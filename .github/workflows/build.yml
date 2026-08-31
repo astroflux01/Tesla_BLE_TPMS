@@ -22,7 +22,7 @@ jobs:
           ./bin/arduino-cli config init
           ./bin/arduino-cli config add board_manager.additional_urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
           ./bin/arduino-cli core update-index
-          ./bin/arduino-cli core install esp32:esp32@3.3.8
+          ./bin/arduino-cli core install esp32:esp32@2.0.17
 
       - name: List files
         run: ls -la
